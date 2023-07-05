@@ -1,6 +1,6 @@
 {
   "name": "next-kakao",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple kakao auth api package for next",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -22,15 +22,15 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run prettier && npm run lint",
-    "test": "jest --config jestconfig.json",
+    "prepublishOnly": "npm run prettier && npm run lint",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\""
   },
   "keywords": [
-    "pdf",
+    "nextjs",
     "react",
-    "typescript"
+    "typescript",
+    "kakao"
   ],
   "author": "handwoo24",
   "license": "MIT",
