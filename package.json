@@ -1,13 +1,13 @@
 {
-  "name": "react-package-sample",
+  "name": "next-kakao",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple kakao auth api package for next",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/handwoo24/react-package-sample.git"
+    "url": "git+https://github.com/handwoo24/next-kakao.git"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -53,5 +53,8 @@
     "react-dom": "^18.2.0",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
   }
 }
