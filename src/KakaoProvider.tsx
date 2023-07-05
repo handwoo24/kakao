@@ -5,10 +5,14 @@ import Script from 'next/script'
 
 type AuthorizeOptions = {
   redirectUri: string
+  scope?: string
 }
 
 type KakaoAuth = {
   authorize: ({ redirectUri }: AuthorizeOptions) => void
+  setAccessToken: (accessToken: string) => void
+  getAccessToken: () => string
+  logout: () => Promise<void>
 }
 
 type Kakao = {
