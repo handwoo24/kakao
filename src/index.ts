@@ -1,1 +1,1 @@
-export { default as KakaoScript } from './KakaoScript'
+export { default as KakaoProvider } from './KakaoProvider'
