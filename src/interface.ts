@@ -18,7 +18,7 @@ export type Kakao = {
 export type KakaoMap = {
   load: () => void
   LatLng: new (lat: number, lng: number) => { La: number; Ma: number }
-  Map?: new (element: HTMLElement, options: { center: { La: number; Ma: number }; level: number }) => unknown
+  Map: new (element: HTMLElement | null, options: { center: { La: number; Ma: number }; level: number }) => unknown
 }
 
 export interface KakaoTokenOptions {
