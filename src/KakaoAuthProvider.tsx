@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, type FC, useState } from 'react'
 import Script from 'next/script'
-import { KakaoAuth } from './interface'
+import { type KakaoAuth } from './interface'
 
 interface KakaoProviderProps {
   apiKey: string
