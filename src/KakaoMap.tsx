@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useEffect, useRef } from 'react'
+import React, { CSSProperties, FC, useEffect, useMemo, useRef } from 'react'
 
 interface KakaoMapProps {
   lat: number
@@ -10,19 +10,17 @@ interface KakaoMapProps {
 const KakaoMap: FC<KakaoMapProps> = ({ lat, lng, level, style }) => {
   const ref = useRef<HTMLDivElement | null>(null)
 
+  const kakaoMap = useMemo(() => window?.kakao?.maps?.Map, [])
+
   useEffect(() => {
-    if (window?.kakao?.maps?.Map && ref.current) {
-      new window.kakao.maps.Map(ref.current, {
+    if (kakaoMap && ref.current) {
+      new kakaoMap(ref.current, {
         center: new window.kakao.maps.LatLng(lat, lng),
         level,
       })
     }
-  }, [lat, lng, level])
-  return (
-    <>
-      <div style={style} ref={ref} />
-    </>
-  )
+  }, [lat, lng, level, kakaoMap])
+  return <div style={style} ref={ref} />
 }
 
 export default KakaoMap
