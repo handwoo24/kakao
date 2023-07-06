@@ -7,7 +7,7 @@ interface KakaoMapProps {
 
 const KakaoMapScript: FC<KakaoMapProps> = ({ apiKey }) => {
   const handleLoad = () => {
-    window.kakao.load()
+    window.kakao.maps.load()
   }
   return (
     <Script
