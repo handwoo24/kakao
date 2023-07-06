@@ -17,7 +17,7 @@ const KakaoMapProvider: FC<KakaoProviderProps> = ({ apiKey, children }) => {
   const [kakaoMap, setKakaoMap] = useState<KakaoMap | null>(null)
 
   const handleLoad = () => {
-    window.Kakao.init(apiKey)
+    window.kakao.maps.load()
     setTimeout(() => {
       setKakaoMap(window.kakao.maps)
     }, 100)
