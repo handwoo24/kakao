@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useEffect, useRef } from 'react'
+import React, { type CSSProperties, type FC, useEffect, useRef } from 'react'
 import { useKakaoMap } from './KakaoMapProvider'
 
 interface KakaoMapProps {
