@@ -50,4 +50,5 @@ export default async function Page({ searchParams: { code } }: PageProps) {
 ```ts
 const Map = () => {
   return <KakaoMap apiKey="your api key" lat={33.450701} lng={126.570667} level={3} style={{ width:500, height: 500 } />
+}
 ```
