@@ -13,7 +13,6 @@ const KakaoMapScript: FC<KakaoMapProps> = ({ apiKey }) => {
     <Script
       type='text/javascript'
       src={`https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${apiKey}`}
-      async
       onLoad={handleLoad}
     />
   )
