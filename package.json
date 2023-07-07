@@ -1,6 +1,6 @@
 {
   "name": "next-kakao",
-  "version": "1.4.0",
+  "version": "1.5.1",
   "description": "A simple kakao auth api package for next",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -55,6 +55,8 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "next": "^13.4.9",
+    "styled-jsx": "^5.1.2"
   }
 }
