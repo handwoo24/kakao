@@ -12,10 +12,3 @@ export const getKakaoToken = async ({ apiKey, code, redirectUri }: KakaoTokenOpt
 
 export const getKakaoUser = async (accessToken: string): Promise<KakaoUser> =>
   axios.get(kakaoUserUri, { headers: { Authorization: `Bearer ${accessToken}` } }).then((response) => response.data)
-
-const authorizeKakaoUser = async ({ code, redirectUri, apiKey }: KakaoTokenOptions) => {
-  const { access_token: accessToken } = await getKakaoToken({ code, redirectUri, apiKey })
-  return getKakaoUser(accessToken)
-}
-
-export default authorizeKakaoUser
