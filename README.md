@@ -40,7 +40,8 @@ const apiKey = "your kakao js client api key"
 
 export default async function Page({ searchParams: { code } }: PageProps) {
   if (typeof code !== 'string') return redirect('/')
-  const accessToken = await authorizeKakaoUser({code, redirectUri, apiKey})
+  const { access_token } = await getKakaoToken({code, redirectUri, apiKey})
+  const kakaoUser = await getKakaoUser(access_token)
   return ...
 }
 ```
