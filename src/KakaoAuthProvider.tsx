@@ -1,18 +1,19 @@
 'use client'
 
-import React, { createContext, useContext, type FC, useState } from 'react'
+import React, { createContext, useContext, type FC, useState, type ReactNode } from 'react'
 import Script from 'next/script'
 import { type KakaoAuth } from './interface'
 
 interface KakaoProviderProps {
   apiKey: string
+  children?: ReactNode
 }
 
 const KakaoAuthContext = createContext<KakaoAuth | null>(null)
 
 export const useKakaoAuth = () => useContext(KakaoAuthContext)
 
-const KakaoAuthProvider: FC<KakaoProviderProps> = ({ apiKey }) => {
+const KakaoAuthProvider: FC<KakaoProviderProps> = ({ apiKey, children }) => {
   const [kakaoAuth, setKakaoAuth] = useState<KakaoAuth | null>(null)
 
   const handleLoad = () => {
@@ -28,6 +29,7 @@ const KakaoAuthProvider: FC<KakaoProviderProps> = ({ apiKey }) => {
         crossOrigin='anonymous'
         onLoad={handleLoad}
       />
+      {children}
     </KakaoAuthContext.Provider>
   )
 }
