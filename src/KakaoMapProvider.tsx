@@ -26,6 +26,7 @@ const KakaoMapProvider: FC<KakaoProviderProps> = ({ apiKey, children }) => {
   return (
     <KakaoMapContext.Provider value={kakaoMap}>
       <Script
+        key='kakao-map-sdk'
         type='text/javascript'
         src={`https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${apiKey}`}
         onLoad={handleLoad}

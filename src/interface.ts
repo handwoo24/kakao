@@ -4,7 +4,7 @@ export type AuthorizeOptions = {
 }
 
 export type KakaoAuth = {
-  authorize: ({ redirectUri }: AuthorizeOptions) => void
+  authorize: ({ redirectUri, scope }: AuthorizeOptions) => void
   setAccessToken: (accessToken: string) => void
   getAccessToken: () => string
   logout: () => Promise<void>
