@@ -16,6 +16,7 @@ export const getKakaoUser = async (accessToken: string): Promise<KakaoUser> =>
 export const initKakaoAuth = (apiKey: string) => {
   const script = document.createElement('script')
   script.src = 'https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js'
+  script.type = 'text/javascript'
   script.async = true
   script.crossOrigin = 'anonymous'
   script.integrity = 'sha384-x+WG2i7pOR+oWb6O5GV5f1KN2Ko6N7PTGPS7UlasYWNxZMKQA63Cj/B2lbUmUfuC'
@@ -30,6 +31,10 @@ export const initKakaoAuth = (apiKey: string) => {
 }
 
 export const authorizeKakaoAuth = async (apiKey: string, { redirectUri, scope }: AuthorizeOptions): Promise<void> => {
-  const kakao = await initKakaoAuth(apiKey)
-  kakao.Auth.authorize({ redirectUri, scope })
+  try {
+    window.Kakao.Auth.authorize({ redirectUri, scope })
+  } catch {
+    const kakao = await initKakaoAuth(apiKey)
+    kakao.Auth.authorize({ redirectUri, scope })
+  }
 }
