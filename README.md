@@ -3,30 +3,16 @@
 ### Auth Example
 
 ```ts
-"layout.tsx"
+"authorize-page.tsx"
 
-export default function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <html lang='en'>
-      <body>
-        <KakaoAuthProvider apikey="your api key">
-          <Layout>{children}</Layout>
-        </KakaoAuthProvider>
-      </body>
-    </html>
-  )
+export default function Page() {
+  return <KakaoAuthorizeButton apiKey="your api key" />
 }
 
-
-"SomeAuthComponent.tsx"
-
-export default function SomeAuthComponent({ ... }: Props) {
-  ...
-  const kakaoAuth = useKakaoAuth()
-  ...
-}
+```
 
 
+```ts
 "redirect-page.tsx"
 
 interface PageProps {
@@ -51,9 +37,7 @@ export default async function Page({ searchParams: { code } }: PageProps) {
 ```ts
 const Map = () => {
   return (
-    <KakaoMapProvider apiKey="your api key">
-      <KakaoMap lat={33.450701} lng={126.570667} level={3} style={{ width: 500, height: 500 }} />
-    </KakaoMapProvider>
+      <KakaoMap apiKey="your api key" lat={33.450701} lng={126.570667} level={3} style={{ width: 500, height: 500 }} />
     )
 }
 ```
