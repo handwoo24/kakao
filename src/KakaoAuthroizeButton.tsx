@@ -1,23 +1,20 @@
 'use client'
 
-import React, { useCallback, type CSSProperties } from 'react'
+import React, { type CSSProperties } from 'react'
 import _JSXStyle from 'styled-jsx/style'
-import { useKakaoAuth } from './KakaoAuthProvider'
-import type { AuthorizeOptions } from './interface'
+import { type AuthorizeOptions } from './interface'
+import { authorizeKakaoAuth } from './authorize'
 
 interface KakaoAuthroizeButtonProps extends AuthorizeOptions {
+  apiKey: string
   style?: CSSProperties
 }
 
-const KakaoAuthroizeButton = ({ redirectUri, scope, style }: KakaoAuthroizeButtonProps) => {
-  const kakao = useKakaoAuth()
-
-  const handleClick = useCallback(() => kakao?.authorize({ redirectUri, scope }), [kakao, redirectUri, scope])
-
+const KakaoAuthroizeButton = ({ apiKey, redirectUri, scope, style }: KakaoAuthroizeButtonProps) => {
   return (
     <>
       <img
-        onClick={handleClick}
+        onClick={() => authorizeKakaoAuth(apiKey, { redirectUri, scope })}
         id='kakao-authorize-btn'
         src='https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg'
         width={222}
