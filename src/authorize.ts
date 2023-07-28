@@ -38,3 +38,21 @@ export const authorizeKakaoAuth = async (apiKey: string, { redirectUri, scope }:
     kakao.Auth.authorize({ redirectUri, scope })
   }
 }
+
+export const setKakaoAccessToken = async (apiKey: string, token: string): Promise<void> => {
+  try {
+    window.Kakao.Auth.setAccessToken(token)
+  } catch {
+    const kakao = await initKakaoAuth(apiKey)
+    kakao.Auth.setAccessToken(token)
+  }
+}
+
+export const logoutKakao = async (apiKey: string): Promise<void> => {
+  try {
+    window.Kakao.Auth.logout()
+  } catch {
+    const kakao = await initKakaoAuth(apiKey)
+    kakao.Auth.logout()
+  }
+}
