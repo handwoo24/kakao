@@ -1,4 +1,3 @@
-export type * from './interface'
 export { default as KakaoMap } from './KakaoMap'
 export {
   getKakaoToken,
