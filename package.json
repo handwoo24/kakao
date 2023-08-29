@@ -1,6 +1,6 @@
 {
   "name": "@handwoo24/kakao",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple kakao auth api package for next",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

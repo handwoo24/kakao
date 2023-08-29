@@ -15,7 +15,7 @@ export type Kakao = {
   Auth: KakaoAuth
 }
 
-export type KakaoMap = {
+export type KakaoMapClient = {
   load: () => void
   LatLng: new (lat: number, lng: number) => { La: number; Ma: number }
   Map: new (element: HTMLElement | null, options: { center: { La: number; Ma: number }; level: number }) => unknown
